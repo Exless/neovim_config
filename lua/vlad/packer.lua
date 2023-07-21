@@ -21,6 +21,14 @@ return require('packer').startup(function(use)
 	  run = ':TSUpdate'
   }
 
+
+  use {
+	  'nvim-tree/nvim-tree.lua',
+	  requires = {
+		  'nvim-tree/nvim-web-devicons', -- optional
+	  },
+  }
+
   use('nvim-lua/plenary.nvim')
   use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
@@ -52,9 +60,15 @@ use {
 	run = ":MasonUpdate" -- :MasonUpdate updates registry contents
 }
 
+use {'mfussenegger/nvim-dap'}
+
+
 use {"akinsho/toggleterm.nvim", tag = '*', config = function()
 	require("toggleterm").setup()
 end}
+
+use {"terrortylor/nvim-comment"}
+
 
 
 
